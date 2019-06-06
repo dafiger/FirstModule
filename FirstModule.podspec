@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = 'FirstModule'
   # s.version      = '_RepositoryVersion_'
-s.version      = '0.0.2'
+s.version      = '0.0.3'
   s.summary      = 'FirstModule'
 
   s.description  = <<-DESC
@@ -89,27 +89,45 @@ s.version      = '0.0.2'
   #     ss.dependency 'BSSBaseDependTool/BSSConfiguration'
   # end
 
-  s.subspec 'Header' do |ss|
-      ss.source_files = 'FirstModule/Classes/Header/**/*'
-      # ss.public_header_files = 'FirstModule/Classes/Header/*.h'
-      ss.private_header_files = 'FirstModule/Classes/Header/*.h'
-  end
+  # s.subspec 'Header' do |ss|
+  #     ss.source_files = 'FirstModule/Classes/Header/**/*'
+  #     # ss.public_header_files = 'FirstModule/Classes/Header/*.h'
+  #     ss.private_header_files = 'FirstModule/Classes/Header/*.h'
+  # end
 
   s.subspec 'Classes' do |ss|
-      ss.source_files = 'FirstModule/Classes/**/*'
-      # ss.public_header_files = 'FirstModule/Classes/**/*.h'
-      ss.private_header_files = 'FirstModule/Classes/**/*.h'
 
-      ss.exclude_files = 'FirstModule/Classes/Header/**/*', 'FirstModule/Classes/ModuleManager/**/*'
-      ss.dependency 'FirstModule/Header'
+      ss.subspec 'Header' do |sss|
+          sss.source_files = 'FirstModule/Classes/Header/**/*'
+          # ss.public_header_files = 'FirstModule/Classes/Header/*.h'
+          sss.private_header_files = 'FirstModule/Classes/Header/*.h'
+
+          sss.dependency 'MediatorModule'
+      end
+
+      ss.subspec 'Other' do |sss|
+          sss.source_files = 'FirstModule/Classes/Other/**/*'
+          # ss.public_header_files = 'FirstModule/Classes/Other/*.h'
+          sss.private_header_files = 'FirstModule/Classes/Other/*.h'
+          
+          sss.dependency 'FirstModule/Classes/Header'
+      end
+
+      ss.subspec 'ModuleManager' do |sss|
+          sss.source_files = 'FirstModule/Classes/ModuleManager/**/*'
+          sss.public_header_files = 'FirstModule/Classes/ModuleManager/**/*.h'
+
+          sss.dependency 'FirstModule/Classes/Header'
+          sss.dependency 'FirstModule/Classes/Other'
+      end
   end
 
-  s.subspec 'ModuleManager' do |ss|
-      ss.source_files = 'FirstModule/Classes/ModuleManager/**/*'
-      ss.public_header_files = 'FirstModule/Classes/ModuleManager/**/*.h'
+  # s.subspec 'ModuleManager' do |ss|
+  #     ss.source_files = 'FirstModule/Classes/ModuleManager/**/*'
+  #     ss.public_header_files = 'FirstModule/Classes/ModuleManager/**/*.h'
       
-      ss.dependency 'FirstModule/Classes'
-  end
+  #     ss.dependency 'FirstModule/Classes'
+  # end
 
   # s.subspec 'Crash' do |ss|
   #     ss.source_files = 'DFBasePlug/DFBasePlug/Classes/Crash/*'
@@ -178,6 +196,6 @@ s.version      = '0.0.2'
   # s.dependency 'BaseModel', :path => 'BaseProject/BaseModel'
   # s.dependency 'AFNetworking', '~> 3.2.1'
   
-  s.dependency 'MediatorModule'
+  s.dependency 'MediatorModule' # --sources='https://github.com/dafiger/DFPublicSpec.git'
 
 end

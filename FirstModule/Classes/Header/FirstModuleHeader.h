@@ -9,6 +9,7 @@
 #ifndef FirstModuleHeader_h
 #define FirstModuleHeader_h
 
+#import "MediatorManager.h"
 #import "FirstProtocol.h"
 
 #endif /* FirstModuleHeader_h */
