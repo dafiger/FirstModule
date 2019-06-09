@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = 'FirstModule'
   # s.version      = '_RepositoryVersion_'
-s.version      = '0.0.7'
+s.version      = '0.0.8'
   s.summary      = 'FirstModule'
 
   s.description  = <<-DESC

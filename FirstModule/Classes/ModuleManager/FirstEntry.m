@@ -8,6 +8,8 @@
 
 #import "FirstEntry.h"
 
+#import "FirstVC.h"
+
 @implementation FirstEntry
 
 // 添加initComponent接口，将自身注册到Mediator中

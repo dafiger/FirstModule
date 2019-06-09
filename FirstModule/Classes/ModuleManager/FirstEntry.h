@@ -10,7 +10,6 @@
 
 #import "FirstProtocol.h"
 
-#import "FirstVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
