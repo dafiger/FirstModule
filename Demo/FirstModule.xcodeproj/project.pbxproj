@@ -197,6 +197,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-FirstModule/Pods-FirstModule-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirstModule/FirstModule.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/MediatorModule/MediatorModule.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/SecondModule/SecondModule.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -204,6 +205,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirstModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MediatorModule.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SecondModule.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

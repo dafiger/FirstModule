@@ -35,6 +35,9 @@
     UIViewController *firstVC = [obj homePage:userID];
     if ([firstVC isKindOfClass:[UIViewController class]]) {
         NSLog(@"找到 firstVC");
+        if ([userID isEqualToString:@"456"]) {
+            [self presentViewController:firstVC animated:YES completion:nil];
+        }
     }
 }
 

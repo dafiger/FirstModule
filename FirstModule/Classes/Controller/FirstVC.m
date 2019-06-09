@@ -8,6 +8,9 @@
 
 #import "FirstVC.h"
 
+#import "MediatorManager.h"
+#import "SecondProtocol.h"
+
 @interface FirstVC ()
 
 @end
@@ -17,7 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    [self gotoSecond:@"987"];
     // Do any additional setup after loading the view.
+}
+
+- (void)gotoSecond:(NSString *)userID {
+    //    id obj = [[MediatorManager sharedInstance] fetchService:@protocol(SecondProtocol)];
+    //    id obj = [MediatorManager moduleInstanceFromProtocol:@protocol(SecondProtocol)];
+    id obj = PRGetModuleInstance(SecondProtocol);
+    UIViewController *secondVC = [obj homePage:userID];
+    if ([secondVC isKindOfClass:[UIViewController class]]) {
+        NSLog(@"FirstVC 准备调用 secondVC");
+    }
 }
 
 /*

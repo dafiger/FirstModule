@@ -49,6 +49,7 @@ target 'FirstModule' do
 	# pod 'YTXAnimations', '~> 1.2.4', :subspecs => ["AnimateCSS", "Transformer"]
 	
 	pod 'FirstModule', :path => '../'
+	pod 'SecondModule'
 
 end
 
