@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = 'FirstModule'
   # s.version      = '_RepositoryVersion_'
-s.version      = '0.1.0'
+s.version      = '0.1.1'
   s.summary      = 'FirstModule'
 
   s.description  = <<-DESC
@@ -109,6 +109,7 @@ s.version      = '0.1.0'
       ss.public_header_files = 'FirstModule/Classes/ModuleManager/**/*.h'
       
       ss.dependency 'FirstModule/Header'
+      ss.dependency 'FirstModule/Classes'
   end
 
   # s.subspec 'Crash' do |ss|
