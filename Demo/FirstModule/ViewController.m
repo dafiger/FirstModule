@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MediatorManager.h"
 #import "FirstProtocol.h"
 
 @interface ViewController ()
