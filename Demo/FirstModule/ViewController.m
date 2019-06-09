@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FirstProtocol.h"
 
 @interface ViewController ()
 
@@ -16,8 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self gotoFirst:@"123"];
     // Do any additional setup after loading the view.
 }
 
+- (void)gotoFirst:(NSString *)userID {
+    //    id obj = [[MediatorManager sharedInstance] fetchService:@protocol(FirstProtocol)];
+    //    id obj = [MediatorManager moduleInstanceFromProtocol:@protocol(FirstProtocol)];
+    id obj = PRGetModuleInstance(FirstProtocol);
+    UIViewController *firstVC = [obj homePage:userID];
+    if ([firstVC isKindOfClass:[UIViewController class]]) {
+        NSLog(@"找到 firstVC");
+    }
+}
 
 @end

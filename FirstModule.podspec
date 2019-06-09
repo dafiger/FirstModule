@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = 'FirstModule'
   # s.version      = '_RepositoryVersion_'
-s.version      = '0.0.5'
+s.version      = '0.0.6'
   s.summary      = 'FirstModule'
 
   s.description  = <<-DESC
@@ -30,12 +30,12 @@ s.version      = '0.0.5'
   # s :path => '/Documents/PrettyKit/PrettyKit.podspec'
 
   # 文件路径
-  # s.source_files  = 'FirstModule/Classes/**/*'
+  s.source_files  = 'FirstModule/Classes/**/*'
   # s.source_files  = 'FirstModule/**/*.{h,m,mm,swift}'
   # s.source_files = 'Classes/**/*.{h,m}', 'More_Classes/**/*.{h,m}'
 
   # 公开头文件
-  # s.public_header_files = 'FirstModule/Classes/ModuleManager/**/*.h'
+  s.public_header_files = 'FirstModule/Classes/ModuleManager/*.h'
   # s.public_header_files = 'FirstModule/**/*.h'
   # 私有头文件
   # s.private_header_files = 'FirstModule/Classes/**/*.h'
@@ -95,32 +95,32 @@ s.version      = '0.0.5'
   #     ss.private_header_files = 'FirstModule/Classes/Header/*.h'
   # end
 
-  s.subspec 'Classes' do |ss|
+  # s.subspec 'Classes' do |ss|
 
-      ss.subspec 'Header' do |sss|
-          sss.source_files = 'FirstModule/Classes/Header/**/*'
-          # ss.public_header_files = 'FirstModule/Classes/Header/*.h'
-          sss.private_header_files = 'FirstModule/Classes/Header/*.h'
+  #     ss.subspec 'Header' do |sss|
+  #         sss.source_files = 'FirstModule/Classes/Header/**/*'
+  #         # ss.public_header_files = 'FirstModule/Classes/Header/*.h'
+  #         sss.private_header_files = 'FirstModule/Classes/Header/*.h'
 
-          sss.dependency 'MediatorModule'
-      end
+  #         sss.dependency 'MediatorModule'
+  #     end
 
-      ss.subspec 'Other' do |sss|
-          sss.source_files = 'FirstModule/Classes/Other/**/*'
-          # ss.public_header_files = 'FirstModule/Classes/Other/*.h'
-          sss.private_header_files = 'FirstModule/Classes/Other/*.h'
+  #     ss.subspec 'Other' do |sss|
+  #         sss.source_files = 'FirstModule/Classes/Other/**/*'
+  #         # ss.public_header_files = 'FirstModule/Classes/Other/*.h'
+  #         sss.private_header_files = 'FirstModule/Classes/Other/*.h'
           
-          sss.dependency 'FirstModule/Classes/Header'
-      end
+  #         sss.dependency 'FirstModule/Classes/Header'
+  #     end
 
-      ss.subspec 'ModuleManager' do |sss|
-          sss.source_files = 'FirstModule/Classes/ModuleManager/**/*'
-          # sss.public_header_files = 'FirstModule/Classes/ModuleManager/*.h'
+  #     ss.subspec 'ModuleManager' do |sss|
+  #         sss.source_files = 'FirstModule/Classes/ModuleManager/**/*'
+  #         # sss.public_header_files = 'FirstModule/Classes/ModuleManager/*.h'
 
-          sss.dependency 'FirstModule/Classes/Header'
-          sss.dependency 'FirstModule/Classes/Other'
-      end
-  end
+  #         sss.dependency 'FirstModule/Classes/Header'
+  #         sss.dependency 'FirstModule/Classes/Other'
+  #     end
+  # end
 
   # s.subspec 'ModuleManager' do |ss|
   #     ss.source_files = 'FirstModule/Classes/ModuleManager/**/*'
